@@ -7,7 +7,7 @@ export async function onRequest(context) {
 
   if (url.pathname.includes("/feed")) {
     let newHunger = Math.min(1, state.hunger + 0.20);
-    state.hunger = Math.round(newHunger * 100) / 100; // arrotonda a 2 decimali
+    state.hunger = Math.round(newHunger * 100) / 100;
   }
 
   return new Response(JSON.stringify(state), {
@@ -17,3 +17,4 @@ export async function onRequest(context) {
     }
   });
 }
+
