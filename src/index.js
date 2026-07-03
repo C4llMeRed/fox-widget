@@ -1,20 +1,7 @@
-let state = {
-  hunger: 0.50
-};
-
-export async function onRequest(context) {
-  const url = new URL(context.request.url);
-
-  if (url.pathname.includes("/feed")) {
-    let newHunger = Math.min(1, state.hunger + 0.20);
-    state.hunger = Math.round(newHunger * 100) / 100;
+export default {
+  async fetch(request, env, ctx) {
+    // You can view your logs in the Observability dashboard
+    console.info({ message: 'Hello World Worker received a request!' }); 
+    return new Response('Hello World!');
   }
-
-  return new Response(JSON.stringify(state), {
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
-    }
-  });
-}
-
+};
