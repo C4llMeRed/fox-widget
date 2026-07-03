@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "feedfox-widget",
+  "compatibility_date": "2026-07-03",
+  "account_id": "INSERISCI_QUI_IL_TUO_ACCOUNT_ID",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "public"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
